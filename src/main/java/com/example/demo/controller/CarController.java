@@ -43,13 +43,5 @@ public class CarController {
         return new ResponseEntity<>(car, HttpStatus.OK);
     }
 
-    @ExceptionHandler(CarNotFoundException.class)
-    public ResponseEntity<Car> handleNotFound(){
-        return ResponseEntity.notFound().build();
-    }
 
-    @ExceptionHandler(IdAlreadyExistsException.class)
-    public ResponseEntity<Car> handleIdNotFound(){
-        return ResponseEntity.badRequest().build();
-    }
 }
